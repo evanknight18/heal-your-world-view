@@ -1,3 +1,4 @@
+//everything in this file is to connect to the database, works from this point
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
@@ -10,4 +11,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+module.exports = connectDB; 
