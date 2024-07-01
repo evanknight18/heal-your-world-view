@@ -59,7 +59,7 @@ exports.deleteCoachingSession = async (req, res) => {
         if (!session) {
             return res.status(404).json({ msg: 'Session not found' });
         }
-        await CoachingSession.findByIdAndRemove(req.params.id);
+        await CoachingSession.findByIdAndDelete(req.params.id);
         res.json({ msg: 'Session removed' });
     } catch (err) {
         console.error(err.message);

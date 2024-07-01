@@ -1,20 +1,20 @@
 const initialState = {
-    sessions: [],
+    testimonials: [],
     loading: true
 };
 
-const coachingReducer = (state = initialState, action) => {
+const testimonialReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'FETCH_COACHING_SESSIONS':
+        case 'FETCH_TESTIMONIALS':
             return {
                 ...state,
-                sessions: action.payload,
+                testimonials: action.payload,
                 loading: false
             };
-        case 'CREATE_COACHING_SESSION':
+        case 'CREATE_TESTIMONIAL':
             return {
                 ...state,
-                sessions: [ ...state.sessions, action.payload ],
+                testimonials: [ ...state.testimonials, action.payload ],
                 loading: false
             };
         default:
@@ -22,4 +22,4 @@ const coachingReducer = (state = initialState, action) => {
     }
 };
 
-export default coachingReducer;
+export default testimonialReducer;

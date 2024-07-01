@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../redux/actions/authActions';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,19 +9,13 @@ const Login = () => {
   });
 
   const { email, password } = formData;
+  const dispatch = useDispatch();
 
   const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = async e => {
     e.preventDefault();
-    const user = { email, password };
-
-    try {
-      const res = await axios.post('/api/auth/login', user);
-      console.log(res.data);
-    } catch (err) {
-      console.error(err.response.data);
-    }
+    dispatch(loginUser({ email, password }));
   };
 
   return (

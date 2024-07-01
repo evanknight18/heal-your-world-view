@@ -59,7 +59,7 @@ exports.deletePodcast = async (req, res) => {
         if (!podcast) {
             return res.status(404).json({ msg: 'Podcast not found' });
         }
-        await Podcast.findByIdAndRemove(req.params.id);
+        await Podcast.findByIdAndDelete(req.params.id);
         res.json({ msg: 'Podcast removed' });
     } catch (err) {
         console.error(err.message);

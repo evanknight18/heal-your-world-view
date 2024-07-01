@@ -59,7 +59,7 @@ exports.deleteTestimonial = async (req, res) => {
         if (!testimonial) {
             return res.status(404).json({ msg: 'Testimonial not found' });
         }
-        await Testimonial.findByIdAndRemove(req.params.id);
+        await Testimonial.findByIdAndDelete(req.params.id);
         res.json({ msg: 'Testimonial removed' });
     } catch (err) {
         console.error(err.message);

@@ -271,22 +271,6 @@ exports.getUserByLastName = async (req, res) => {
     }
 }
 
-//Get a user by phone number
-exports.getUserByPhoneNumber = async (req, res) => {
-    try {
-        const user
-        = await
-        User.findOne({ phoneNumber: req.params.phoneNumber }).select('-password');
-        if (!user) {
-            return res.status(404).json({ msg: 'User not found' });
-        }
-        res.json(user);
-    }
-    catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server Error');
-    }
-}
 
 //Get a user by city
 exports.getUserByCity = async (req, res) => {
@@ -336,18 +320,3 @@ exports.getUserByCountry = async (req, res) => {
     }
 }
 
-//Get a user by zip code
-exports.getUserByZipCode = async (req, res) => {
-    try {
-        const user
-        = await User.findOne({ zipCode: req.params.zipCode }).select('-password');
-        if (!user) {
-            return res.status(404).json({ msg: 'User not found' });
-        }
-        res.json(user);
-    }
-    catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server Error');
-    }
-}
