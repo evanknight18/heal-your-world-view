@@ -1,0 +1,171 @@
+Sure! Below is a template for a comprehensive README for your GitHub project:
+
+---
+
+# Healing Your World View
+
+A web application for hosting podcasts and offering life coaching sessions. Built with the MERN stack (MongoDB, Express, React, Node.js).
+
+## Table of Contents
+
+- [Features](#features)
+- [Demo](#demo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Folder Structure](#folder-structure)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Features
+
+- User authentication and authorization (JWT)
+- Podcast hosting and playback
+- Life coaching session booking
+- Testimonial submission and display
+- Responsive design with Tailwind CSS
+- State management with React hooks
+
+## Demo
+
+You can view a live demo of the application [here](#).
+
+## Installation
+
+To get a local copy up and running, follow these simple steps:
+
+1. **Clone the repo**
+
+```bash
+git clone https://github.com/your-username/healing-your-world-view.git
+```
+
+2. **Install dependencies**
+
+Navigate to the root directory and run:
+
+```bash
+npm install
+```
+
+Navigate to the client directory and run:
+
+```bash
+cd client
+npm install
+```
+
+3. **Set up environment variables**
+
+Create a `.env` file in the root directory with the following content:
+
+```
+MONGO_URI=your_mongo_db_uri
+JWT_SECRET=your_jwt_secret
+PORT=5000
+```
+
+Create a `.env` file in the client directory with the following content:
+
+```
+PORT=3001
+```
+
+4. **Run the app**
+
+From the root directory, run:
+
+```bash
+npm run dev
+```
+
+## Usage
+
+Once the server is running, you can access the application at `http://localhost:3001`.
+
+### Available Scripts
+
+- `npm run server`: Runs the Express server
+- `npm run client`: Runs the React client
+- `npm run dev`: Runs both the client and server concurrently
+
+## Technologies Used
+
+- **Frontend**: React, Tailwind CSS, Axios, React Router, Framer Motion
+- **Backend**: Node.js, Express, MongoDB, Mongoose, JWT, bcryptjs
+- **Development**: Concurrently, PostCSS, Autoprefixer
+
+## Folder Structure
+
+```
+healing-your-world-view/
+├── client/
+│   ├── node_modules/
+│   ├── public/
+│   │   ├── index.html
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── App.js
+│       ├── index.css
+│       ├── index.js
+│   ├── package.json
+│   ├── tailwind.config.js
+│   ├── postcss.config.js
+├── server/
+│   ├── server.js
+│   ├── models/
+│   ├── routes/
+├── .env
+├── package.json
+└── ...
+```
+
+## API Endpoints
+
+### Auth Routes
+
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - Login a user
+- `GET /api/auth/logout` - Logout a user
+- `GET /api/auth/me` - Get current logged-in user
+
+### Podcast Routes
+
+- `GET /api/podcasts` - Get all podcasts
+- `GET /api/podcasts/:id` - Get podcast by ID
+- `POST /api/podcasts` - Create a new podcast
+- `PUT /api/podcasts/:id` - Update a podcast by ID
+- `DELETE /api/podcasts/:id` - Delete a podcast by ID
+
+### Coaching Session Routes
+
+- `GET /api/coaching-sessions` - Get all coaching sessions
+- `POST /api/coaching-sessions` - Book a new coaching session
+
+### Testimonial Routes
+
+- `GET /api/testimonials` - Get all testimonials
+- `POST /api/testimonials` - Create a new testimonial
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+Evan James Knight Sonne - [evanknight18@gmail.com](mailto:evanknight18@gmail.com)
+
+Project Link: [https://github.com/your-username/healing-your-world-view](https://github.com/your-username/healing-your-world-view)

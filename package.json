@@ -1,9 +1,12 @@
 {
+  "name": "healing-your-world-view",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "start": "cd client && npm start",
-    "build:styles": "postcss ./client/src/tailwind.css -o ./client/src/styles.css", 
-    "prebuild": "npm run build:styles",
-    "prestart": "npm run build:styles"
+    "start": "npm run server",
+    "server": "node server/server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "axios": "^1.7.2",
@@ -13,14 +16,9 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.8.0",
-    "mongoose": "^8.4.4",
-    "react-router-dom": "^6.24.0",
-    "react-scripts": "^5.0.1"
+    "mongoose": "^8.4.4"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.39",
-    "postcss-cli": "^11.0.0",
-    "tailwindcss": "^3.4.4"
+    "concurrently": "^8.2.2"
   }
 }
