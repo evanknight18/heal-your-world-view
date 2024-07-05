@@ -7,21 +7,32 @@ import Coaching from './pages/Coaching';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
+import TestComponent from './components/TestComponent';
+import useAuth from './hooks/useAuth';
 
 const App = () => {
-    return (
-        <Router>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/podcasts" element={<Podcasts />} />
-                <Route path="/coaching" element={<Coaching />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-            </Routes>
-        </Router>
-    );
+  const { user, loading, login, logout } = useAuth();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <Router>
+      <div className="bg-gray-100 min-h-screen">
+        <Navbar user={user} logout={logout} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        <Route path="/test" element={<TestComponent />} />
+          <Route path="/podcasts" element={<Podcasts />} />
+          <Route path="/coaching" element={<Coaching />} />
+          <Route path="/login" element={<Login login={login} />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/dashboard" element={<Dashboard user={user} />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 };
 
 export default App;

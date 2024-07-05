@@ -1,42 +1,61 @@
 import React, { useState } from 'react';
 
 const CoachingSessionBooking = () => {
-    const [formData, setFormData] = useState({
-        date: '',
-        time: '',
-        clientInfo: ''
-    });
+  const [formData, setFormData] = useState({
+    date: '',
+    time: '',
+    clientInfo: ''
+  });
 
-    const { date, time, clientInfo } = formData;
+  const { date, time, clientInfo } = formData;
 
-    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    const onSubmit = async e => {
-        e.preventDefault();
-        // Handle booking submission logic here
-        console.log('Booking submitted', formData);
-    };
+  const onSubmit = async e => {
+    e.preventDefault();
+    // Handle form submission, e.g., send data to the server
+    console.log('Booking submitted', formData);
+  };
 
-    return (
-        <div>
-            <h2>Book a Coaching Session</h2>
-            <form onSubmit={onSubmit}>
-                <div>
-                    <label>Date</label>
-                    <input type="date" name="date" value={date} onChange={onChange} required />
-                </div>
-                <div>
-                    <label>Time</label>
-                    <input type="time" name="time" value={time} onChange={onChange} required />
-                </div>
-                <div>
-                    <label>Client Info</label>
-                    <textarea name="clientInfo" value={clientInfo} onChange={onChange} required />
-                </div>
-                <button type="submit">Book Session</button>
-            </form>
-        </div>
-    );
+  return (
+    <form onSubmit={onSubmit} className="bg-white p-6 rounded shadow-md space-y-4">
+      <div>
+        <label className="block text-gray-700">Date</label>
+        <input
+          type="date"
+          name="date"
+          value={date}
+          onChange={onChange}
+          required
+          className="w-full p-2 border rounded"
+        />
+      </div>
+      <div>
+        <label className="block text-gray-700">Time</label>
+        <input
+          type="time"
+          name="time"
+          value={time}
+          onChange={onChange}
+          required
+          className="w-full p-2 border rounded"
+        />
+      </div>
+      <div>
+        <label className="block text-gray-700">Client Info</label>
+        <textarea
+          name="clientInfo"
+          value={clientInfo}
+          onChange={onChange}
+          required
+          className="w-full p-2 border rounded"
+        ></textarea>
+      </div>
+      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+        Book Session
+      </button>
+    </form>
+  );
 };
 
 export default CoachingSessionBooking;

@@ -19,4 +19,4 @@ const PodcastSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('podcasts', PodcastSchema);
+module.exports = mongoose.model('Podcast', PodcastSchema);
