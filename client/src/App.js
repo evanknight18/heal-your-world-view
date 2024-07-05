@@ -7,6 +7,7 @@ import Coaching from './pages/Coaching';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
+import Footer from './components/Footer';
 import useAuth from './hooks/useAuth';
 
 const App = () => {
@@ -18,7 +19,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className="bg-gray-100 min-h-screen">
+      <div className="bg-gray-200 min-h-screen">
         <Navbar user={user} logout={logout} />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -28,7 +29,9 @@ const App = () => {
           <Route path="/login" element={<Login login={login} />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard user={user} />} />
+          
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
